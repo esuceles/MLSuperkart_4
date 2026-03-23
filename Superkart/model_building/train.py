@@ -101,14 +101,14 @@ y_pred_test = best_model.predict(Xtest)
 
 # Evaluation
 print("\nTraining Performance:")
-print("MAE:", mean_absolute_error(ytrain, y_pred_train))
-print("RMSE:", np.sqrt(mean_squared_error(ytrain, y_pred_train)))
-print("R²:", r2_score(ytrain, y_pred_train))
+print("train_MAE:", mean_absolute_error(ytrain, y_pred_train))
+print("train_RMSE:", np.sqrt(mean_squared_error(ytrain, y_pred_train)))
+print("train_R²:", r2_score(ytrain, y_pred_train))
 
 print("\nTest Performance:")
-print("MAE:", mean_absolute_error(ytest, y_pred_test))
-print("RMSE:", np.sqrt(mean_squared_error(ytest, y_pred_test)))
-print("R²:", r2_score(ytest, y_pred_test))
+print("test_MAE:", mean_absolute_error(ytest, y_pred_test))
+print("test_RMSE:", np.sqrt(mean_squared_error(ytest, y_pred_test)))
+print("test_R²:", r2_score(ytest, y_pred_test))
 
 # Log metrics
 mlflow.log_metrics({
