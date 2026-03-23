@@ -14,7 +14,7 @@ from sklearn.metrics import (
 import joblib
 # for creating a folder
 import os
-# for hugging face space authentication to upload files
+# for huggingface space authentication to upload files
 from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 import mlflow
@@ -43,6 +43,7 @@ numeric_features = [
     'Store_Establishment_Year',
     ]
 categorical_features = [
+    
     'Product_Sugar_Content',
     'Product_Type',
     'Store_Size',
@@ -111,13 +112,13 @@ print("R²:", r2_score(ytest, y_pred_test))
 
 # Log metrics
 mlflow.log_metrics({
-  "train_RMSE": train_rmse,
-  "test_RMSE": test_rmse,
-  "train_MAE": train_mae,
-  "test_MAE": test_mae,
-  "train_R2": train_r2,
-  "test_R2": test_r2
-  })
+    "train_RMSE": train_rmse,
+    "test_RMSE": test_rmse,
+    "train_MAE": train_mae,
+    "test_MAE": test_mae,
+    "train_R2": train_r2,
+    "test_R2": test_r2
+    })
 
  # Save the model locally
 model_path = "superkart_v1.joblib"
