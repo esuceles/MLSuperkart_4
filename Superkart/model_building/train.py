@@ -110,7 +110,7 @@ print("RMSE:", np.sqrt(mean_squared_error(ytest, y_pred_test)))
 print("R²:", r2_score(ytest, y_pred_test))
 
 # Log metrics
-    mlflow.log_metrics({
+mlflow.log_metrics({
         "train_RMSE": train_rmse,
         "test_RMSE": test_rmse,
         "train_MAE": train_mae,
