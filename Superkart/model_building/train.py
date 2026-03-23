@@ -111,21 +111,21 @@ print("R²:", r2_score(ytest, y_pred_test))
 
 # Log metrics
 mlflow.log_metrics({
-        "train_RMSE": train_rmse,
-        "test_RMSE": test_rmse,
-        "train_MAE": train_mae,
-        "test_MAE": test_mae,
-        "train_R2": train_r2,
-        "test_R2": test_r2
-    })
+  "train_RMSE": train_rmse,
+  "test_RMSE": test_rmse,
+  "train_MAE": train_mae,
+  "test_MAE": test_mae,
+  "train_R2": train_r2,
+  "test_R2": test_r2
+  })
 
  # Save the model locally
-    model_path = "superkart_v1.joblib"
-    joblib.dump(best_model, model_path)
+model_path = "superkart_v1.joblib"
+joblib.dump(best_model, model_path)
 
     # Log the model artifact
-    mlflow.log_artifact(model_path, artifact_path="model")
-    print(f"Model saved as artifact at: {model_path}")
+mlflow.log_artifact(model_path, artifact_path="model")
+print(f"Model saved as artifact at: {model_path}")
 
 
 # Upload to Hugging Face
